@@ -14,13 +14,32 @@ public class UnsortedUniqueArray {
 		UnsortedUniqueArray arrNums = new UnsortedUniqueArray(20);
 		Random random = new Random();
 		
+//		int[] valuesToInsert = new int[] { 234, 456, 564, 346, 456, 732, 627, 754, 467, 23 };
+		
+		int lastVal = -1;
+		int midVal = -1;
+		int midVal2 = -1;
+		
 		// Insert 10 unique random numbers
 		for(int i=0; i<10; i++){
-			int val = random.nextInt(1000);
-			arrNums.insert(val);
+			lastVal = random.nextInt(1000);
+			arrNums.insert(lastVal);
+			if (i == 5){ midVal = lastVal; }
+			if (i == 3){ midVal2 = lastVal; }
 		}
 		
+		arrNums.print();
 		
+		// Find the last inserted number
+		arrNums.find(lastVal);
+		arrNums.print();
+		
+		// Delete a specific value
+		arrNums.delete(midVal);
+		arrNums.print();
+		
+		arrNums.delete(midVal2);
+		arrNums.print();
 	}
 	
 	/**
@@ -35,12 +54,18 @@ public class UnsortedUniqueArray {
 		this.count = 0;
 	}
 	
+	/**
+	 * Inserts the value at the next available index in the array.
+	 * @param value The value to insert.
+	 */
 	public void insert(int value){
 		
 		// Insert the value at the end of the array
 		if(count < array.length){
 			array[count] = value;
+			System.out.println("Inserting value " + value + " at index " + count);
 			count++;
+			System.out.println("There are now " + count + " total items in the array.");
 		} else {
 			System.out.println("Cannot insert value - array is full!");
 		}
@@ -58,14 +83,13 @@ public class UnsortedUniqueArray {
 		// If the value cannot be found, return
 		if (index == -1){ System.out.println("Unable to find value to delete!"); return; }
 		
-		System.out.println("Found value at index " + index);
+		System.out.println("Deleting value " + value + " at index " + index);
 		
 		// Otherwise, loop through the values to the right and move them all to location-1
 		for(int loc = index; loc < count; loc++){
 			int nextVal = loc + 1;
-			System.out.println("Moving array[" + nextVal + "] = " + array[nextVal] + " to array[" + loc + "]");
+			System.out.println("Moving value " + array[nextVal] + " from index " + nextVal + " to index " + loc);
 			array[loc] = array[nextVal];
-			print();
 		}
 		
 		// Decrement the total count
