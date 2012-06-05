@@ -14,8 +14,6 @@ public class UnsortedUniqueArray {
 		UnsortedUniqueArray arrNums = new UnsortedUniqueArray(20);
 		Random random = new Random();
 		
-//		int[] valuesToInsert = new int[] { 234, 456, 564, 346, 456, 732, 627, 754, 467, 23 };
-		
 		int lastVal = -1;
 		int midVal = -1;
 		int midVal2 = -1;
