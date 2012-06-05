@@ -30,16 +30,19 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 		
 		arrNums.print();
 		
-//		// Find the last inserted number
-//		arrNums.find(lastVal);
-//		arrNums.print();
-//		
-//		// Delete a specific value
-//		arrNums.delete(midVal);
-//		arrNums.print();
-//		
-//		arrNums.delete(midVal2);
-//		arrNums.print();
+		// Find the last inserted number
+		System.out.println("Searching for value " + lastVal);
+		arrNums.find(lastVal);
+		arrNums.print();
+		
+		// Delete a specific value
+		System.out.println("Searching for value " + midVal);
+		arrNums.find(midVal);
+		arrNums.print();
+		
+		System.out.println("Searching for value " + midVal2);
+		arrNums.find(midVal2);
+		arrNums.print();
 	}
 	
 	@Override
@@ -98,10 +101,10 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 	 */
 	private int find(int value, int lowerBound, int upperBound) {
 		
+		System.out.println("Searching between indexes " + lowerBound + " and " + upperBound);
+		
 		// Verify that both bounds are >= 0
-		if(lowerBound < 0 || upperBound < 0){
-			return -1;
-		}
+		if(lowerBound < 0 || upperBound < 0){ return -1; }
 		
 		// Determine if the number is in first half or second half, recursively
 		
@@ -109,26 +112,23 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 		// the lower half. If there is an odd number of values, the upper bound
 		// is the index directly in the middle of the values.
 		
-		// Split upper bound
-		int originalUpperBound = upperBound;
-		upperBound = upperBound / 2;
+		// Split search indices
+		int currentIndex = ((upperBound - lowerBound) / 2) + lowerBound;
 
 		// Found value
-		if(value == array[upperBound]){
-			System.out.println("Found value at index " + upperBound);
+		if(value == array[currentIndex]){
+			System.out.println("Found value at index " + currentIndex);
 			return upperBound;
 		}
 		// Value is in the lower half
-		else if(value < array[upperBound]){
-			if(lowerBound == upperBound){ return -1; }
-			System.out.println("Searching between indexes " + lowerBound + " and " + upperBound);
-			return find(value, lowerBound, upperBound);
+		else if(value < array[currentIndex]){
+			if(currentIndex == upperBound || currentIndex == lowerBound){ return -1; }
+			return find(value, lowerBound, currentIndex);
 		}
 		// Value is in the upper half
 		else{
-			if(upperBound == originalUpperBound){ return -1; }
-			System.out.println("Searching between indexes " + upperBound + " and " + originalUpperBound);
-			return find(value, upperBound, originalUpperBound);
+			if(upperBound == currentIndex){ return -1; }
+			return find(value, currentIndex, upperBound);
 		}
 	}
 
