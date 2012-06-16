@@ -68,7 +68,7 @@ public class Client extends Thread implements Runnable {
 		genericUnsortedArray.populate(100);
 		
 		genericUnsortedArray.print();
-//		genericUnsortedArray = SelectionSort.sort(genericUnsortedArray);
+		genericUnsortedArray = SelectionSort.sort(genericUnsortedArray);
 		genericUnsortedArray.print();
 	}
 	
