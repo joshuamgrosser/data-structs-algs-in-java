@@ -1,4 +1,4 @@
-package com.grosser;
+package com.grosser.array;
 
 import java.util.Random;
 
@@ -32,16 +32,16 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 		
 		// Find the last inserted number
 		System.out.println("Searching for value " + lastVal);
-		arrNums.find(lastVal);
+		arrNums.contains(lastVal);
 		arrNums.print();
 		
 		// Delete a specific value
 		System.out.println("Searching for value " + midVal);
-		arrNums.find(midVal);
+		arrNums.contains(midVal);
 		arrNums.print();
 		
 		System.out.println("Searching for value " + midVal2);
-		arrNums.find(midVal2);
+		arrNums.contains(midVal2);
 		arrNums.print();
 	}
 	
@@ -51,7 +51,7 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 	}
 	
 	@Override
-	public int find(int value) {
+	public int contains(int value) {
 		return find(value, 0, count);
 	}
 	
@@ -100,7 +100,6 @@ public class SortedUniqueArray extends UnsortedUniqueArray {
 	 * @return The index of the value, if found, or -1 if the value was not found.
 	 */
 	private int find(int value, int lowerBound, int upperBound) {
-		
 		System.out.println("Searching between indexes " + lowerBound + " and " + upperBound);
 		
 		// Verify that both bounds are >= 0

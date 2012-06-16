@@ -1,8 +1,8 @@
-package com.grosser;
+package com.grosser.array;
 
 import java.util.Random;
 
-public class UnsortedUniqueArray {
+public class UnsortedUniqueArray implements IntArray {
 	
 	protected int[] array;
 	protected int count;
@@ -29,7 +29,7 @@ public class UnsortedUniqueArray {
 		arrNums.print();
 		
 		// Find the last inserted number
-		arrNums.find(lastVal);
+		arrNums.contains(lastVal);
 		arrNums.print();
 		
 		// Delete a specific value
@@ -52,10 +52,10 @@ public class UnsortedUniqueArray {
 		this.count = 0;
 	}
 	
-	/**
-	 * Inserts the value at the next available index in the array.
-	 * @param value The value to insert.
+	/* (non-Javadoc)
+	 * @see com.grosser.array.Array#insert(int)
 	 */
+	@Override
 	public void insert(int value){
 		
 		// Insert the value at the end of the array
@@ -69,14 +69,14 @@ public class UnsortedUniqueArray {
 		}
 	}
 	
-	/**
-	 * Attempts to delete the current value, if it exists in the array.
-	 * @param value The value to delete.
+	/* (non-Javadoc)
+	 * @see com.grosser.array.Array#delete(int)
 	 */
+	@Override
 	public void delete(int value){
 		
 		// Find the location of the value to delete
-		int index = find(value);
+		int index = contains(value);
 		
 		// If the value cannot be found, return
 		if (index == -1){ System.out.println("Unable to find value to delete!"); return; }
@@ -94,24 +94,23 @@ public class UnsortedUniqueArray {
 		count--;
 	}
 	
-	/**
-	 * Print the value of the array.
+	/* (non-Javadoc)
+	 * @see com.grosser.array.Array#print()
 	 */
+	@Override
 	public void print(){
-		System.out.print("Current array: [");
+		System.out.print("[");
 		for(int index = 0; index < array.length; index++){
 			System.out.print(" " + array[index]);
 		}
 		System.out.print("]\n");
 	}
 	
-	/**
-	 * Performs a linear search to find the value in O(N) time.
-	 * @param value The value to find.
-	 * @return the index of the value, if found, or -1 if the value was not found.
+	/* (non-Javadoc)
+	 * @see com.grosser.array.Array#find(int)
 	 */
-	public int find(int value){
-		
+	@Override
+	public int contains(int value){
 		for(int index = 0; index < count; index++){
 			if(array[index] == value){
 				System.out.println("Found value " + value + " at index " + index);
@@ -120,5 +119,43 @@ public class UnsortedUniqueArray {
 		}
 		
 		return -1;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.grosser.array.IntArray#get(int)
+	 */
+	@Override
+	public int get(int index) {
+		return array[index];
+	}
+
+	/* (non-Javadoc)
+	 * @see com.grosser.array.IntArray#size()
+	 */
+	@Override
+	public int size() {
+		return array.length;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.grosser.array.IntArray#set(int, int)
+	 */
+	@Override
+	public void set(int index, int value) {
+		array[index] = value;
+	}
+
+	@Override
+	public void populate(int numValues) {
+		Random random = new Random();
+		
+		if(array.length < numValues){ 
+			throw new IllegalArgumentException("Number of values greater than array size.");
+		}
+		
+		// Insert 10 unique random numbers
+		for(int i = 0; i < numValues; i++){
+			array[i] = random.nextInt(1000);
+		}
 	}
 }
