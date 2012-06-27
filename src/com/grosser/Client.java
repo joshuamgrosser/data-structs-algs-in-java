@@ -1,13 +1,10 @@
 package com.grosser;
 
-import java.util.Random;
-
 import com.grosser.array.IntArray;
 import com.grosser.array.UnsortedUniqueArray;
 import com.grosser.sort.BubbleSort;
 import com.grosser.sort.InsertionSort;
 import com.grosser.sort.SelectionSort;
-import com.grosser.struct.Queue;
 
 /**
  * Class for testing various data structures and sorting/searching algorithms.
@@ -77,7 +74,7 @@ public class Client extends Thread implements Runnable {
 		genericUnsortedArray.populate(100);
 		
 		genericUnsortedArray.print();
-//		genericUnsortedArray = InsertionSort.sort(genericUnsortedArray);
+		genericUnsortedArray = InsertionSort.sort(genericUnsortedArray);
 		genericUnsortedArray.print();
 	}
 }
