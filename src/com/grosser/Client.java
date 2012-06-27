@@ -15,7 +15,7 @@ public class Client extends Thread implements Runnable {
 	/**
 	 * Array size constant.
 	 */
-	private static final int ARRAY_SIZE = 100;
+	private static final int ARRAY_SIZE = 10;
 	
 	/**
 	 * Instance.
@@ -53,7 +53,7 @@ public class Client extends Thread implements Runnable {
 	
 	private void doBubbleSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
-		genericUnsortedArray.populate(100);
+		genericUnsortedArray.populate(ARRAY_SIZE);
 		
 		genericUnsortedArray.print();
 		genericUnsortedArray = BubbleSort.sort(genericUnsortedArray);
@@ -62,7 +62,7 @@ public class Client extends Thread implements Runnable {
 	
 	private void doSelectionSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
-		genericUnsortedArray.populate(100);
+		genericUnsortedArray.populate(ARRAY_SIZE);
 		
 		genericUnsortedArray.print();
 		genericUnsortedArray = SelectionSort.sort(genericUnsortedArray);
@@ -71,7 +71,7 @@ public class Client extends Thread implements Runnable {
 	
 	private void doInsertionSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
-		genericUnsortedArray.populate(100);
+		genericUnsortedArray.populate(ARRAY_SIZE);
 		
 		genericUnsortedArray.print();
 		genericUnsortedArray = InsertionSort.sort(genericUnsortedArray);

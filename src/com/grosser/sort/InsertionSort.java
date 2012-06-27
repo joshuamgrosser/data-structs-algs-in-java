@@ -43,18 +43,13 @@ public class InsertionSort {
 			// value to swap with "outer"
 			for(int inner = (outer - 1); inner >= 0; inner--){
 				
-				if(inner == 0){
-					// Shift the value at inner to the right
-					arrayToSort.set(inner+1, arrayToSort.get(inner));
-					
-					// Copy the value in temp to the inner+1 index
-					arrayToSort.set(inner, temp);
-				}
-				
 				if(arrayToSort.get(inner) > temp){
 
 					// Shift the value at inner to the right
 					arrayToSort.set(inner+1, arrayToSort.get(inner));
+					
+					// If at the beginning of the array, replace array[0] with temp
+					if(inner == 0){ arrayToSort.set(0, temp); }
 				} else {
 					
 					// Copy the value in temp to the inner+1 index
