@@ -32,10 +32,12 @@ public class SelectionSort {
 		int n = arrayToSort.size();
 		
 		// Outer loop
-		for(int outer = 0; outer < n; outer++){
+		for(int outer = 0; outer < n - 1; outer++){
+			
+			smallest = outer;
 			
 			// Inner loop finding smallest value to swap with "outer"
-			for(int inner = outer; inner < n; inner++){
+			for(int inner = outer + 1; inner < n; inner++){
 				
 				if(arrayToSort.get(inner) < arrayToSort.get(smallest)){
 					smallest = inner;
