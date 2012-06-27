@@ -15,7 +15,7 @@ public class Client extends Thread implements Runnable {
 	/**
 	 * Array size constant.
 	 */
-	private static final int ARRAY_SIZE = 10;
+	private static final int ARRAY_SIZE = 20;
 	
 	/**
 	 * Instance.
@@ -41,40 +41,40 @@ public class Client extends Thread implements Runnable {
 	 */
 	@Override
 	public void run() {
-		System.out.println("Performing bubble sort.");
+		System.out.println("\n\nPerforming bubble sort.");
 		doBubbleSort();
 		
-		System.out.println("Performing selection sort.");
+		System.out.println("\n\nPerforming selection sort.");
 		doSelectionSort();
 		
-		System.out.println("Performing insertion sort.");
+		System.out.println("\n\nPerforming insertion sort.");
 		doInsertionSort();
+		
+		System.out.println("\n\nPerforming bidirectional bubble sort.");
+		doBidirectionalBubbleSort();
 	}
 	
 	private void doBubbleSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
 		genericUnsortedArray.populate(ARRAY_SIZE);
-		
-		genericUnsortedArray.print();
 		genericUnsortedArray = BubbleSort.sort(genericUnsortedArray);
-		genericUnsortedArray.print();
 	}
 	
 	private void doSelectionSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
 		genericUnsortedArray.populate(ARRAY_SIZE);
-		
-		genericUnsortedArray.print();
 		genericUnsortedArray = SelectionSort.sort(genericUnsortedArray);
-		genericUnsortedArray.print();
 	}
 	
 	private void doInsertionSort(){
 		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
 		genericUnsortedArray.populate(ARRAY_SIZE);
-		
-		genericUnsortedArray.print();
-		genericUnsortedArray = InsertionSort.sort(genericUnsortedArray);
-		genericUnsortedArray.print();
+		genericUnsortedArray = InsertionSort.sort(genericUnsortedArray);		
+	}
+	
+	private void doBidirectionalBubbleSort(){
+		genericUnsortedArray = new UnsortedUniqueArray(ARRAY_SIZE);
+		genericUnsortedArray.populate(ARRAY_SIZE);
+		genericUnsortedArray = BubbleSort.sortBidirectional(genericUnsortedArray);
 	}
 }

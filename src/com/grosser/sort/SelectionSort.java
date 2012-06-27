@@ -14,6 +14,9 @@ public class SelectionSort {
 	 */
 	public static IntArray sort(IntArray arrayToSort){
 		
+		System.out.print("Original array: ");
+		arrayToSort.print();
+		
 		// Have three indices to keep track of - outer, inner, and smallest.
 		// Values to the left of the outer index have been sorted already.
 		// The inner index is the inner loop, which loops through the remaining
@@ -43,6 +46,8 @@ public class SelectionSort {
 			swap(arrayToSort, outer, smallest);
 		}
 		
+		System.out.print("Sorted array: ");
+		arrayToSort.print();
 		return arrayToSort;
 	}
 	

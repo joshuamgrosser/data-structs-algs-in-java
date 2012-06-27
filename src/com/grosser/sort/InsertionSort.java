@@ -25,6 +25,9 @@ public class InsertionSort {
 		// resting place for the temp value is found, copy the value in temp to that location. Increment outer,
 		// then repeat the whole cycle.
 		
+		System.out.print("Original array: ");
+		arrayToSort.print();
+		
 		int temp = 0;
 		
 		// n is the size of the array
@@ -60,6 +63,9 @@ public class InsertionSort {
 				}
 			}
 		}
+		
+		System.out.print("Sorted array: ");
+		arrayToSort.print();
 		
 		return arrayToSort;
 	}
