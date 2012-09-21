@@ -41,6 +41,8 @@ public class Client extends Thread implements Runnable {
 	 */
 	@Override
 	public void run() {
+		System.out.println("Executing...");
+		
 		System.out.println("\n\nPerforming bubble sort.");
 		doBubbleSort();
 		
