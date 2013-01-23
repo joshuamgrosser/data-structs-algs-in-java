@@ -6,32 +6,48 @@ public class LinkedList {
 	 * @param args command-line arguments
 	 */
 	public static void main(String[] args){
-		Link first = new Link("test", "abc");
-		LinkedList linkedList = new LinkedList(first);
-		
-		Link linkA = new Link("A", "This is link A");
-		Link linkB = new Link("B", "This is link B");
-		linkedList.insert(linkA);
-		linkedList.insert(linkB);
+		LinkedList linkedList = new LinkedList();
+		Linkable linkA = new Link(99, "Commander", "Shepard", "Assault Rifle");
+		Linkable linkB = new Link(75, "Officer", "Miranda Lawson", "Biotic Powers");
+		Linkable linkC = new Link(95, "Scientist", "Mordin Solus", "Omni Blade");
+		linkedList.insertFirst(linkA);
+		linkedList.insertFirst(linkB);
+		linkedList.insertFirst(linkC);
 		
 		System.out.println(linkedList.toString());
 	}
 	
-	private Link first;
+	/**
+	 * The first link in the list.
+	 */
+	protected Linkable first;
+	
+	/**
+	 * Creates a new linked list with no links.
+	 */
+	public LinkedList(){
+		this.setFirst(null);
+	}
 	
 	/**
 	 * Creates a new linked list with a single link.
 	 * @param first The first link in the list.
 	 */
-	public LinkedList(Link first){
+	public LinkedList(Linkable first){
 		this.setFirst(first);
 	}
 
-	public Link getFirst() {
+	/**
+	 * @return the first link of the list
+	 */
+	public Linkable getFirst() {
 		return first;
 	}
 
-	public void setFirst(Link first) {
+	/**
+	 * @param first
+	 */
+	public void setFirst(Linkable first) {
 		this.first = first;
 	}
 	
@@ -39,7 +55,7 @@ public class LinkedList {
 	 * Inserts a new link at the front of the list.
 	 * @param link The link to insert.
 	 */
-	public void insert(Link link){
+	public void insertFirst(Linkable link){
 		link.setNext(this.first);
 		this.setFirst(link);
 	}
@@ -48,13 +64,16 @@ public class LinkedList {
 	 * Deletes the link at the front of the list.
 	 */
 	public void delete(){
-		Link head = this.getFirst();
+		Linkable head = this.getFirst();
 		this.setFirst(head.getNext());
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		Link current = this.getFirst();
+		Linkable current = this.getFirst();
 		String val = "";
 		
 		while(current != null){

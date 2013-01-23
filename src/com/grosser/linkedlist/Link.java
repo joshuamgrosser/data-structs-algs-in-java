@@ -2,69 +2,77 @@ package com.grosser.linkedlist;
 
 /**
  * Represents a single link in a linked list. Contains a reference to the next link
- * plus two String value objects.
+ * plus various value objects.
  * 
  * @author joshuagrosser
  */
-public class Link {
+public class Link implements Linkable {
 	
-	private Link next = null;
-	private String someValue;
-	private String someOtherValue;
+	private Linkable next = null;
+	protected LinkData data = null;
 	
 	/**
 	 * Create a new Link with a reference to the next link.
-	 * @param next Reference to the next link in the list.
+	 * 
+	 * @param key data field.
+	 * @param value data field.
+	 * @param anotherValue data field.
+	 * @param yetAnotherValue data field.
 	 */
-	public Link(String val1, String val2){
-		this.someValue = val1;
-		this.someOtherValue = val2;
+	public Link(int key, String value, String anotherValue, String yetAnotherValue){
+		this.data.setKey(key);
+		this.data.setValue(value);
+		this.data.setAnotherValue(anotherValue);
+		this.data.setYetAnotherValue(yetAnotherValue);
 	}
 	
-	/**
-	 * @return a reference to the next link in the list.
+	/* (non-Javadoc)
+	 * @see com.grosser.linkedlist.Linkable#getNext()
 	 */
-	public Link getNext() {
+	@Override
+	public Linkable getNext() {
 		return next;
 	}
 
-	/**
-	 * @param next reference to the next link in the list.
+	/* (non-Javadoc)
+	 * @see com.grosser.linkedlist.Linkable#setNext(com.grosser.linkedlist.Linkable)
 	 */
-	public void setNext(Link next) {
+	@Override
+	public void setNext(Linkable next) {
 		this.next = next;
 	}
-
-	/**
-	 * @return some value
-	 */
-	public String getSomeValue() {
-		return someValue;
-	}
-
-	/**
-	 * @param someValue some value
-	 */
-	public void setSomeValue(String someValue) {
-		this.someValue = someValue;
-	}
-
-	/**
-	 * @return some other value
-	 */
-	public String getSomeOtherValue() {
-		return someOtherValue;
-	}
-
-	/**
-	 * @param someOtherValue some other value
-	 */
-	public void setSomeOtherValue(String someOtherValue) {
-		this.someOtherValue = someOtherValue;
-	}
 	
+	/* (non-Javadoc)
+	 * @see com.grosser.linkedlist.Linkable#getData()
+	 */
+	@Override
+	public LinkData getData() {
+		return data;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.grosser.linkedlist.Linkable#setData(com.grosser.linkedlist.LinkData)
+	 */
+	@Override
+	public void setData(LinkData data) {
+		this.data = data;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Link contents: " + this.getSomeValue() + ", " + this.getSomeOtherValue();
+		StringBuilder sb = new StringBuilder();
+		String comma = ", ";
+		sb.append("Link contents: ");
+		sb.append(this.data.getKey());
+		sb.append(comma);
+		sb.append(this.data.getValue());
+		sb.append(comma);
+		sb.append(this.data.getAnotherValue());
+		sb.append(comma);
+		sb.append(this.data.getYetAnotherValue());
+		return sb.toString();
 	}
 }
