@@ -20,10 +20,7 @@ public class Link implements Linkable {
 	 * @param yetAnotherValue data field.
 	 */
 	public Link(int key, String value, String anotherValue, String yetAnotherValue){
-		this.data.setKey(key);
-		this.data.setValue(value);
-		this.data.setAnotherValue(anotherValue);
-		this.data.setYetAnotherValue(yetAnotherValue);
+		this.data = new LinkDataImpl(key, value, anotherValue, yetAnotherValue);
 	}
 	
 	/* (non-Javadoc)

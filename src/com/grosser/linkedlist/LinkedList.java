@@ -9,7 +9,7 @@ public class LinkedList {
 		LinkedList linkedList = new LinkedList();
 		Linkable linkA = new Link(99, "Commander", "Shepard", "Assault Rifle");
 		Linkable linkB = new Link(75, "Officer", "Miranda Lawson", "Biotic Powers");
-		Linkable linkC = new Link(95, "Scientist", "Mordin Solus", "Omni Blade");
+		Linkable linkC = new Link(61, "Scientist", "Mordin Solus", "Omni Blade");
 		linkedList.insertFirst(linkA);
 		linkedList.insertFirst(linkB);
 		linkedList.insertFirst(linkC);

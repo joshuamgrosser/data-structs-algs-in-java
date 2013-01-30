@@ -25,10 +25,7 @@ public class DoubleEndedLink implements DoublyLinkable {
 
 	public DoubleEndedLink(int key, String value, String anotherValue,
 			String yetAnotherValue) {
-		this.data.setKey(key);
-		this.data.setValue(value);
-		this.data.setAnotherValue(anotherValue);
-		this.data.setYetAnotherValue(yetAnotherValue);
+		this.data = new LinkDataImpl(key, value, anotherValue, yetAnotherValue);
 	}
 	
 	/* (non-Javadoc)
@@ -76,5 +73,23 @@ public class DoubleEndedLink implements DoublyLinkable {
 	@Override
 	public void setData(LinkData data) {
 		this.data = data;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		String comma = ", ";
+		sb.append("Link contents: ");
+		sb.append(this.data.getKey());
+		sb.append(comma);
+		sb.append(this.data.getValue());
+		sb.append(comma);
+		sb.append(this.data.getAnotherValue());
+		sb.append(comma);
+		sb.append(this.data.getYetAnotherValue());
+		return sb.toString();
 	}
 }
