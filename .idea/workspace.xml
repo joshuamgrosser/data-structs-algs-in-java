@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85e00cd6-b3a6-4263-84d5-cd6bcc1de1cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/grosser/reflection/ReflectionSample.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
     </list>
     <ignored path="data-structs-algs-in-java.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="85e00cd6-b3a6-4263-84d5-cd6bcc1de1cd" time="1362330053241" ignored="false" />
+    <file path="/Dummy.txt" changelist="85e00cd6-b3a6-4263-84d5-cd6bcc1de1cd" time="1362330165147" ignored="false" />
     <file path="/fragment.java" changelist="85e00cd6-b3a6-4263-84d5-cd6bcc1de1cd" time="1362325629838" ignored="false" />
     <file path="/ReflectionSample.java" changelist="85e00cd6-b3a6-4263-84d5-cd6bcc1de1cd" time="1362329769145" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,7 +104,7 @@
       <file leaf-file-name="ReflectionSample.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/grosser/reflection/ReflectionSample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.9458239">
+            <state line="55" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.6216617">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -631,7 +629,11 @@
       <created>1362325999013</created>
       <updated>1362325999013</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added ReflectionSample.java.&#10;Updated to JDK7.">
+      <created>1362330171173</created>
+      <updated>1362330171173</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -658,7 +660,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -786,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/grosser/reflection/ReflectionSample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.9458239">
+        <state line="55" column="28" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.6216617">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
