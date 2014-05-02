@@ -18,7 +18,7 @@ public interface DoublyLinkable {
 	public abstract DoublyLinkable getPrevious();
 
 	/**
-	 * @param next reference to the previous link in the list.
+	 * @param previous reference to the previous link in the list.
 	 */
 	public abstract void setPrevious(DoublyLinkable previous);
 
